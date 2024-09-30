@@ -1,0 +1,43 @@
+package module1;
+import java.util.Scanner;
+
+public class Module3 {
+	public static void main(String[] args) {
+
+		Scanner scnr = new Scanner(System.in);
+			
+		double weeklyIncome;
+		double taxRate;
+		
+		//User input for their weekly income
+		System.out.println("What is your weekly income?");
+		weeklyIncome = scnr.nextDouble();
+		
+		//Determine the tax rate based on income
+		if (weeklyIncome < 500) {
+			taxRate = 0.10;
+		}
+		else if (weeklyIncome >= 500 && weeklyIncome < 1500) {
+			taxRate = 0.15;
+		}
+		else if (weeklyIncome >= 1500 && weeklyIncome < 2500) {
+			taxRate =  0.20;
+		}
+		else {
+			taxRate = 0.30;
+		}
+			
+		double taxWithheld = weeklyIncome * taxRate;
+		
+		//Output the results
+		System.out.print("Your weekly tax withheld for your income of $");
+		System.out.printf("%.2f", weeklyIncome);
+		System.out.print(" is $");
+		System.out.printf("%.2f", taxWithheld);
+		System.out.print(" with a tax rate of ");
+		System.out.printf("%d",(int)(taxRate * 100));
+		System.out.print("%.");
+		
+		}
+					
+}
